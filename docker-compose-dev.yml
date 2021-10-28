@@ -1,0 +1,52 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.6
+    environment:
+        - MYSQL_DATABASE=ebdb
+        - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3390:3306"
+  mail:
+    image: djfarrelly/maildev
+    ports:
+      - "1090:80"
+  web:
+    build:
+      context: .
+      dockerfile: DockerDev
+    environment:
+      - "WEB_DOCUMENT_ROOT=/app/public"
+      - APP_URL=http://localhost:8888
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=ebdb
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - APP_DEBUG=true
+      - DEBUGBAR_ENABLED=false
+      - APP_LOG=daily
+      - APP_LOG_LEVEL=debug
+      - BROADCAST_DRIVER=log
+      - MAIL_DRIVER=smtp
+      - MAIL_HOST=mail
+      - MAIL_PORT=25
+      - MAIL_FROM_ADDRESS=info@pronuri.com
+      - MAIL_FROM_NAME=プロヌリ運営事務局
+
+      # XDEBUG settings
+      - PHP_DEBUGGER=xdebug
+      - XDEBUG_REMOTE_HOST=host.docker.internal
+      - XDEBUG_REMOTE_PORT=9000
+      - XDEBUG_REMOTE_CONNECT_BACK=0
+      - XDEBUG_REMOTE_AUTOSTART=1
+
+    volumes:
+      - ./:/app
+      - ~/.ssh:/root/.ssh
+    ports:
+      - "8890:80"
+    expose:
+      - "80"
+    depends_on:
+      - db
