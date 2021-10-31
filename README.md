@@ -1,35 +1,35 @@
 <h2>How to test</h2>
-Run postman:
-SIGNUP:
-    - http://localhost:8890/api/auth/signup | Method:POST
-    - Header:
-        Content-Type: application/json
-        X-Requested-With: XMLHttpRequest
-    - Body (raw):
-    {
-        "name":"Huy",
-        "email":"test@test.com",
-        "password":"123123",
-        "password_confirmation":"123123"
-    }
-LOGIN:
-    - http://localhost:8890/api/auth/login | Method:POST
-    - Header:
-        Content-Type: application/json
-        X-Requested-With: XMLHttpRequest
-    - Body (raw):
-    {
-        "email":"test@test.com",
-        "password":"123123",
-    }
-LOGOUT:
-    - http://localhost:8890/api/auth/logout | Method:GET
-    - Header:
-        Authorization: token_type access_token
-GET INFO USER:
-    - http://localhost:8890/api/auth/user | Method:GET
-    - Header:
-        Authorization: token_type access_token
+Run postman:<br><br>
+SIGNUP:<br>
+    - http://localhost:8890/api/auth/signup | Method:POST<br>
+    - Header:<br>
+        Content-Type: application/json<br>
+        X-Requested-With: XMLHttpRequest<br>
+    - Body (raw):<br>
+    {<br>
+        "name":"Huy",<br>
+        "email":"test@test.com",<br>
+        "password":"123123",<br>
+        "password_confirmation":"123123"<br>
+    }<br><br>
+LOGIN:<br>
+    - http://localhost:8890/api/auth/login | Method:POST<br>
+    - Header:<br>
+        Content-Type: application/json<br>
+        X-Requested-With: XMLHttpRequest<br>
+    - Body (raw):<br>
+    {<br>
+        "email":"test@test.com",<br>
+        "password":"123123",<br>
+    }<br><br>
+LOGOUT:<br>
+    - http://localhost:8890/api/auth/logout | Method:GET<br>
+    - Header:<br>
+        Authorization: token_type access_token<br><br>
+GET INFO USER:<br>
+    - http://localhost:8890/api/auth/user | Method:GET<br>
+    - Header:<br>
+        Authorization: token_type access_token<br>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
