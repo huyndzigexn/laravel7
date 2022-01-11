@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '91dcc7fb9ee40aa8ce4cecb176415ef493ac7414',
+    'reference' => '3ad37c23ad0e32599a49db3e0e006285b8a0156a',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -464,7 +464,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '91dcc7fb9ee40aa8ce4cecb176415ef493ac7414',
+      'reference' => '3ad37c23ad0e32599a49db3e0e006285b8a0156a',
     ),
     'laravel/passport' => 
     array (
@@ -483,6 +483,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c808a7227f97ecfd9219fbf913bad842ea854ddc',
+    ),
+    'laravel/ui' => 
+    array (
+      'pretty_version' => 'v2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f5398544a9cd4804a42d09ce51735e37cd51ea2d',
     ),
     'lcobucci/jwt' => 
     array (
